@@ -28,6 +28,14 @@ type PaymentData struct {
 	Issuer string `json:"issuer,omitempty"`
 }
 
+type LinksPayment struct {
+	PaymentURL string `json:"paymentUrl"`
+	WebhookURL string `json:"webhookUrl"`
+	RedirectURL string `json:"redirectUrl"`
+	Settlement string `json:"settlement"`
+	Refunds string `json:"refunds"`
+}
+
 // PaymentStatus for a payment
 type PaymentStatus string
 
@@ -66,11 +74,14 @@ type PaymentReply struct {
 	AmountRefunded    float64 `json:"amountRefunded,string,omitempty"`
 	AmountRemaining   float64 `json:"amountRemaining,string,omitempty"`
 	Description       string
-	Method            string
+	Method            string `json:"method,omitempty"`
 	Metadata          interface{}
 	Details           interface{} `json:",omitempty"`
 	ProfileID         string      `json:"profileId"`
-	Links             map[string]string
+	CustomerID		  string 	  `json:"customerId"`
+	MandateID 		  string	  `json:"mandateId,omitempty"`
+	RecurringType	  string 	  `json:"recurringType,omitempty"`
+	Links             LinksPayment `json:"links"`
 }
 
 type paymentReplyWrapper struct {

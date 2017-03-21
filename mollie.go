@@ -7,15 +7,9 @@ package mollie
 // Mollie holds references to all sections of the API
 // use the access functions to retrieve instances of this structure
 type Mollie struct {
-<<<<<<< HEAD
-	issuers  *IssuerAPI
-	methods  *MethodAPI
-	payments *PaymentAPI
-=======
 	issuers   *IssuerAPI
 	methods   *MethodAPI
 	payments  *PaymentAPI
->>>>>>> 6ad903aeb1e6ec18aac1f4d0b362b3e3e06a76fc
 	customers *CustomerAPI
 }
 
@@ -46,10 +40,7 @@ func (m Mollie) Payments() *PaymentAPI {
 	return m.payments
 }
 
-<<<<<<< HEAD
-=======
 // Customers returns a reference to the CustomerAPI
->>>>>>> 6ad903aeb1e6ec18aac1f4d0b362b3e3e06a76fc
 func (m Mollie) Customers() *CustomerAPI {
 	return m.customers
 }

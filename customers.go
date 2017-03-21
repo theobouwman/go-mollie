@@ -14,7 +14,7 @@ type CustomerAPI struct {
 	c *core
 }
 
-type Links struct {
+type LinksPagination struct {
 	Previous string `json:"previous,omitempty"`
 	Next     string `json:"next,omitempty"`
 	First    string `json:"first,omitempty"`
@@ -33,7 +33,7 @@ type ListCustomersResponse struct {
 	Offset     uint       `json:"offset"`
 	Count      uint       `json:"count"`
 	Data       []Customer `json:"data"`
-	Links      Links      `json:"links,omitempty"`
+	Links      LinksPagination      `json:"links,omitempty"`
 }
 
 type Customer struct {
